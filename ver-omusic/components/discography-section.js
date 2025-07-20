@@ -58,6 +58,11 @@ class DiscographySection extends HTMLElement {
           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
           gap: 2rem;
         }
+        @media (max-width: 600px) {
+          .grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
         .cover {
           border-radius: 0;
           box-shadow: 0 2px 16px 0 rgba(20,33,61,0.08);
