@@ -109,46 +109,46 @@ class DiscographySection extends HTMLElement {
             <img class="cover-img" src="/ver-omusic/assets/images/single/i-really-want-to-stay-at-your-house-remix.jpg" alt="I Really Want To Stay At Your House (Remix)" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/funk" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/funk.jpg" alt="Funk" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/funk.jpg" alt="Funk" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/e1b3fe6a-3f81-4441-a38e-abb16f4a1b21" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/himitsu.jpg" alt="Himitsu" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/himitsu.jpg" alt="Himitsu" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/25415986-4a6a-4635-a27b-917b1826c07a" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/shingeki-no-kyojin-wo-mite.jpg" alt="Shingeki no Kyojin wo Mite" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/shingeki-no-kyojin-wo-mite.jpg" alt="Shingeki no Kyojin wo Mite" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/gear" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/gear.jpg" alt="Gear" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/gear.jpg" alt="Gear" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/hi-oni" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/hi-oni.jpg" alt="Hi Oni" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/hi-oni.jpg" alt="Hi Oni" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/countrymalone" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/countrymalone.jpg" alt="Countrymalone" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/countrymalone.jpg" alt="Countrymalone" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/whiplash-remix-iron-flavor" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/whiplash-remix-iron-flavor.jpg" alt="Whiplash (Remix) - Iron Flavor" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/whiplash-remix-iron-flavor.jpg" alt="Whiplash (Remix) - Iron Flavor" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/department-store" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/department-store.jpg" alt="Department Store" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/department-store.jpg" alt="Department Store" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/cyberpunk-trap" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/cyberpunk-trap.jpg" alt="Cyberpunk Trap" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/cyberpunk-trap.jpg" alt="Cyberpunk Trap" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/naughty-boy" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/naughty-boy.jpg" alt="Naughty Boy" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/naughty-boy.jpg" alt="Naughty Boy" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/run-run" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/run-run.jpg" alt="Run Run" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/run-run.jpg" alt="Run Run" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/my-mistakes" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/my-mistakes.jpg" alt="My Mistakes" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/my-mistakes.jpg" alt="My Mistakes" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/alone" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/alone.jpg" alt="Alone" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/alone.jpg" alt="Alone" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/look-back" target="_blank" rel="noopener" tabindex="-1">
-            <img class="cover-img" src="/assets/images/single/look-back.jpg" alt="Look Back" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/look-back.jpg" alt="Look Back" />
           </a>
         </div>
       </section>
