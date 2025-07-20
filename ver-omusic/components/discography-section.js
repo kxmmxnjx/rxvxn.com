@@ -106,7 +106,7 @@ class DiscographySection extends HTMLElement {
         </div>
         <div class="grid">
           <a class="cover" href="https://soundcloud.com/ver-omusic/i-really-want-to-stay-at-your-house-remix" target="_blank" rel="noopener">
-            <img class="cover-img" src="/assets/images/single/i-really-want-to-stay-at-your-house-remix.jpg" alt="I Really Want To Stay At Your House (Remix)" />
+            <img class="cover-img" src="/ver-omusic/assets/images/single/i-really-want-to-stay-at-your-house-remix.jpg" alt="I Really Want To Stay At Your House (Remix)" />
           </a>
           <a class="cover" href="https://soundcloud.com/ver-omusic/funk" target="_blank" rel="noopener" tabindex="-1">
             <img class="cover-img" src="/assets/images/single/funk.jpg" alt="Funk" />
