@@ -1,0 +1,30 @@
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: monospace;
+    margin: 0;
+    display: flex; /* Change to flex */
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw; /* Ensure full viewport width */
+}
+
+site-header, site-footer {
+    /* These styles are now handled by rxv-card */
+}
+
+main {
+    flex-grow: 1; /* Allow main to take up remaining vertical space */
+    width: 100%; /* Ensure main takes full horizontal space */
+    box-sizing: border-box; /* Include padding in width calculation if we re-add it */
+}
+
+/* Remove game-card specific styles as they are now handled by rxv-card */
+/* game-card {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+} */
