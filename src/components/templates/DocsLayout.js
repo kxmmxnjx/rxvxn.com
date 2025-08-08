@@ -20,9 +20,13 @@ class DocsLayout extends HTMLElement {
                     min-height: calc(100vh - var(--header-height, 0) - var(--footer-height, 0) - var(--space-md) * 2); /* Adjust based on header/footer height */
                 }
                 .sidebar {
-                    border: var(--border-width) var(--border-style) var(--border-color);
                     padding: var(--space-md);
                     overflow-y: auto;
+                }
+                .toc-container {
+                    position: sticky;
+                    top: var(--space-md); /* Adjust this value to your liking */
+                    height: calc(100vh - var(--header-height, 0) - var(--footer-height, 0) - var(--space-md) * 4);
                 }
                 .main-content {
                     overflow-y: auto;
@@ -35,7 +39,7 @@ class DocsLayout extends HTMLElement {
                 <rxv-box class="main-content" padding="md">
                     <slot name="content"></slot>
                 </rxv-box>
-                <rxv-box class="sidebar">
+                <rxv-box class="sidebar toc-container">
                     <slot name="toc"></slot>
                 </rxv-box>
             </rxv-grid>

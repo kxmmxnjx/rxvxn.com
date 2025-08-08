@@ -35,10 +35,42 @@ const navigate = (path) => {
 
 const handleLocation = async () => {
     const path = window.location.pathname;
-    const route = routes[path] || routes['/'];
-    const response = await fetch(route);
-    const html = await response.text();
-    document.getElementById('content').innerHTML = html;
+    const content = document.getElementById('content');
+
+    // Special handling for all /docs routes
+    if (path.startsWith('/docs')) {
+        const isDocsPageAlreadyLoaded = content.querySelector('docs-layout');
+
+        // Determine the correct markdown file path from the URL
+        let docPath;
+        const docsRouteMatch = path.match(/^\/docs\/(atoms|molecules|organisms)\/(.+)$/);
+        if (docsRouteMatch) {
+            const [_, category, component] = docsRouteMatch;
+            docPath = `/src/assets/docs/${category}/${component}.md`;
+        } else {
+            docPath = '/src/assets/docs/README.md'; // Default for /docs
+        }
+
+        // If docs page is not loaded yet, load the whole layout first
+        if (!isDocsPageAlreadyLoaded) {
+            const response = await fetch('/src/pages/docs.html');
+            content.innerHTML = await response.text();
+        }
+
+        // Now, wait for the markdown-renderer to be ready and set its source
+        // This works for both initial load and subsequent navigations within docs
+        await customElements.whenDefined('markdown-renderer');
+        const markdownRenderer = content.querySelector('markdown-renderer');
+        if (markdownRenderer) {
+            markdownRenderer.setAttribute('src', docPath);
+        }
+
+    } else {
+        // Standard page routing for non-docs pages
+        const route = routes[path] || routes['/'];
+        const response = await fetch(route);
+        content.innerHTML = await response.text();
+    }
 };
 
 window.onpopstate = handleLocation;

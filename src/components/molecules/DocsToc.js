@@ -1,12 +1,12 @@
-import '/src/components/atoms/RxvBox.js';
-import '/src/components/atoms/RxvText.js';
-import '/src/components/atoms/RxvLink.js';
-import '/src/components/atoms/RxvStack.js';
+import "/src/components/atoms/RxvBox.js";
+import "/src/components/atoms/RxvText.js";
+import "/src/components/atoms/RxvLink.js";
+import "/src/components/atoms/RxvStack.js";
 
 class DocsToc extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
         this.generateToc = this.generateToc.bind(this);
     }
 
@@ -30,6 +30,9 @@ class DocsToc extends HTMLElement {
                 .level-3 {
                     margin-left: var(--space-lg);
                 }
+                rxv-box {
+                    border: none !important;ㅠ
+                }
             </style>
             <rxv-box>
                 <rxv-text size="lg" weight="bold">Table of Contents</rxv-text>
@@ -37,35 +40,40 @@ class DocsToc extends HTMLElement {
             </rxv-box>
         `;
         // Listen for a custom event from MarkdownRenderer when content is loaded
-        document.addEventListener('markdown-rendered', this.generateToc);
+        document.addEventListener("markdown-rendered", this.generateToc);
     }
 
     disconnectedCallback() {
-        document.removeEventListener('markdown-rendered', this.generateToc);
+        document.removeEventListener("markdown-rendered", this.generateToc);
     }
 
     generateToc(event) {
         const markdownContent = event.detail.content;
-        const tocList = this.shadowRoot.getElementById('toc-list');
-        tocList.innerHTML = ''; // Clear previous TOC
+        const tocList = this.shadowRoot.getElementById("toc-list");
+        tocList.innerHTML = ""; // Clear previous TOC
 
         // Use a temporary div to parse the HTML string
-        const tempDiv = document.createElement('div');
+        const tempDiv = document.createElement("div");
         tempDiv.innerHTML = markdownContent;
 
-        const headings = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        const headings = tempDiv.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-        headings.forEach(heading => {
+        headings.forEach((heading) => {
             const level = parseInt(heading.tagName.substring(1));
             const text = heading.textContent;
-            const id = heading.id || text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            const id =
+                heading.id ||
+                text
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/(^-|-$)/g, "");
 
             // Ensure the heading has an ID for linking
             if (!heading.id) {
                 heading.id = id;
             }
 
-            const listItem = document.createElement('li');
+            const listItem = document.createElement("li");
             listItem.classList.add(`level-${level}`);
             listItem.innerHTML = `<rxv-link href="#${id}">${text}</rxv-link>`;
             tocList.appendChild(listItem);
@@ -73,4 +81,4 @@ class DocsToc extends HTMLElement {
     }
 }
 
-customElements.define('docs-toc', DocsToc);
+customElements.define("docs-toc", DocsToc);
