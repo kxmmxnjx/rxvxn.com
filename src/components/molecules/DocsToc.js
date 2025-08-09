@@ -15,6 +15,9 @@ class DocsToc extends HTMLElement {
             <style>
                 :host {
                     display: block;
+                    position: fixed;
+                    top: 100px;
+                    width: inherit;
                 }
                 ul {
                     list-style: none;
@@ -35,7 +38,7 @@ class DocsToc extends HTMLElement {
                 }
             </style>
             <rxv-box>
-                <rxv-text size="lg" weight="bold">Table of Contents</rxv-text>
+                <rxv-text size="lg" weight="bold">ON THIS PAGE</rxv-text>
                 <ul id="toc-list"></ul>
             </rxv-box>
         `;
