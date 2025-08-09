@@ -34,7 +34,7 @@ class DocsToc extends HTMLElement {
                     margin-left: var(--space-lg);
                 }
                 rxv-box {
-                    border: none !important;ㅠ
+                    border: none !important;
                 }
             </style>
             <rxv-box>
