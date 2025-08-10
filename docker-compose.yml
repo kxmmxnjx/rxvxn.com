@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+    rxvxn:
+        image: nginx:stable
+        container_name: rxvxn
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./public:/usr/share/nginx/html:ro
+            - ./nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./certbot/www:/var/www/certbot
+            - ./certbot/conf:/etc/letsencrypt
+        restart: unless-stopped
+
+    certbot:
+        image: certbot/certbot
+        container_name: certbot
+        volumes:
+            - ./certbot/www:/var/www/certbot
+            - ./certbot/conf:/etc/letsencrypt
+        entrypoint: /bin/sh
+        command: >-
+            -c "certbot certonly --webroot --webroot-path=/var/www/certbot
+            --email your@email.com --agree-tos --no-eff-email
+            -d rxvxn.com -d www.rxvxn.com"
