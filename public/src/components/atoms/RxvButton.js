@@ -1,7 +1,7 @@
 class RxvButton extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
         this.button = null;
     }
 
@@ -12,14 +12,14 @@ class RxvButton extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['variant', 'size', 'disabled', 'loading', 'type', 'full-width'];
+        return ["variant", "size", "disabled", "loading", "type", "full-width"];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (this.shadowRoot) {
-            if (name === 'disabled') {
+            if (name === "disabled") {
                 this.updateDisabledState();
-            } else if (name === 'loading') {
+            } else if (name === "loading") {
                 this.updateLoadingState();
             } else {
                 this.updateStyles();
@@ -28,11 +28,11 @@ class RxvButton extends HTMLElement {
     }
 
     render() {
-        const type = this.getAttribute('type') || 'button';
-        const disabled = this.hasAttribute('disabled');
-        const loading = this.hasAttribute('loading');
+        const type = this.getAttribute("type") || "button";
+        const disabled = this.hasAttribute("disabled");
+        const loading = this.hasAttribute("loading");
 
-        const template = document.createElement('template');
+        const template = document.createElement("template");
         template.innerHTML = `
             <style>
                 :host {
@@ -154,7 +154,7 @@ class RxvButton extends HTMLElement {
                     --width: 100%;
                 }
             </style>
-            <button type="${type}" ${disabled ? 'disabled' : ''}>
+            <button type="${type}" ${disabled ? "disabled" : ""}>
                 <div class="loading-spinner"></div>
                 <div class="button-content">
                     <slot></slot>
@@ -162,7 +162,7 @@ class RxvButton extends HTMLElement {
             </button>
         `;
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.button = this.shadowRoot.querySelector('button');
+        this.button = this.shadowRoot.querySelector("button");
     }
 
     updateStyles() {
@@ -171,41 +171,52 @@ class RxvButton extends HTMLElement {
 
     updateDisabledState() {
         if (this.button) {
-            this.button.disabled = this.hasAttribute('disabled');
+            this.button.disabled = this.hasAttribute("disabled");
         }
     }
 
     updateLoadingState() {
-        const loading = this.hasAttribute('loading');
+        const loading = this.hasAttribute("loading");
         if (this.button) {
             this.button.disabled = loading;
-            this.button.style.setProperty('--spinner-display', loading ? 'block' : 'none');
-            this.button.style.setProperty('--content-display', loading ? 'none' : 'flex');
+            this.button.style.setProperty(
+                "--spinner-display",
+                loading ? "block" : "none"
+            );
+            this.button.style.setProperty(
+                "--content-display",
+                loading ? "none" : "flex"
+            );
         }
     }
 
     attachEventListeners() {
         if (this.button) {
-            this.button.addEventListener('click', (e) => {
-                if (this.hasAttribute('disabled') || this.hasAttribute('loading')) {
+            this.button.addEventListener("click", (e) => {
+                if (
+                    this.hasAttribute("disabled") ||
+                    this.hasAttribute("loading")
+                ) {
                     e.preventDefault();
                     e.stopPropagation();
                     return;
                 }
-                
+
                 // Emit custom event
-                this.dispatchEvent(new CustomEvent('rxv-click', {
-                    bubbles: true,
-                    composed: true,
-                    detail: { originalEvent: e }
-                }));
+                this.dispatchEvent(
+                    new CustomEvent("rxv-click", {
+                        bubbles: true,
+                        composed: true,
+                        detail: { originalEvent: e },
+                    })
+                );
             });
         }
     }
 
     // Public methods
     focus() {
-        if (this.button && !this.hasAttribute('disabled')) {
+        if (this.button && !this.hasAttribute("disabled")) {
             this.button.focus();
         }
     }
@@ -217,4 +228,4 @@ class RxvButton extends HTMLElement {
     }
 }
 
-customElements.define('rxv-button', RxvButton);
+customElements.define("rxv-button", RxvButton);

@@ -1,7 +1,7 @@
 class RxvText extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
     }
 
     connectedCallback() {
@@ -10,7 +10,16 @@ class RxvText extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['size', 'weight', 'color', 'align', 'transform', 'decoration', 'variant', 'as'];
+        return [
+            "size",
+            "weight",
+            "color",
+            "align",
+            "transform",
+            "decoration",
+            "variant",
+            "as",
+        ];
     }
 
     attributeChangedCallback() {
@@ -20,11 +29,24 @@ class RxvText extends HTMLElement {
     }
 
     render() {
-        const as = this.getAttribute('as') || 'span';
-        const allowedTags = ['span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'strong', 'em', 'small'];
-        const tag = allowedTags.includes(as) ? as : 'span';
+        const as = this.getAttribute("as") || "span";
+        const allowedTags = [
+            "span",
+            "p",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "div",
+            "strong",
+            "em",
+            "small",
+        ];
+        const tag = allowedTags.includes(as) ? as : "span";
 
-        const template = document.createElement('template');
+        const template = document.createElement("template");
         template.innerHTML = `
             <style>
                 :host {
@@ -79,65 +101,65 @@ class RxvText extends HTMLElement {
         const style = this.style;
 
         // Size
-        const size = this.getAttribute('size');
+        const size = this.getAttribute("size");
         if (size) {
             const sizeMap = {
-                'xs': 'var(--font-size-xs, 0.75rem)',
-                'sm': 'var(--font-size-sm, 0.875rem)',
-                'md': 'var(--font-size-md, 1rem)',
-                'lg': 'var(--font-size-lg, 1.25rem)',
-                'xl': 'var(--font-size-xl, 1.5rem)',
-                '2xl': 'var(--font-size-2xl, 2rem)'
+                xs: "var(--font-size-xs, 0.75rem)",
+                sm: "var(--font-size-sm, 0.875rem)",
+                md: "var(--font-size-md, 1rem)",
+                lg: "var(--font-size-lg, 1.25rem)",
+                xl: "var(--font-size-xl, 1.5rem)",
+                "2xl": "var(--font-size-2xl, 2rem)",
             };
-            style.setProperty('--font-size', sizeMap[size] || size);
+            style.setProperty("--font-size", sizeMap[size] || size);
         }
 
         // Weight
-        const weight = this.getAttribute('weight');
+        const weight = this.getAttribute("weight");
         if (weight) {
             const weightMap = {
-                'thin': '100',
-                'light': '300',
-                'normal': '400',
-                'medium': '500',
-                'semibold': '600',
-                'bold': '700',
-                'extrabold': '800',
-                'black': '900'
+                thin: "100",
+                light: "300",
+                normal: "400",
+                medium: "500",
+                semibold: "600",
+                bold: "700",
+                extrabold: "800",
+                black: "900",
             };
-            style.setProperty('--font-weight', weightMap[weight] || weight);
+            style.setProperty("--font-weight", weightMap[weight] || weight);
         }
 
         // Color
-        const color = this.getAttribute('color');
+        const color = this.getAttribute("color");
         if (color) {
-            style.setProperty('--color', `var(--color-${color}, ${color})`);
+            style.setProperty("--color", `var(--color-${color}, ${color})`);
         }
 
         // Alignment
-        const align = this.getAttribute('align');
+        const align = this.getAttribute("align");
         if (align) {
-            style.setProperty('--text-align', align);
+            style.setProperty("--text-align", align);
         }
 
         // Transform
-        const transform = this.getAttribute('transform');
+        const transform = this.getAttribute("transform");
         if (transform) {
-            style.setProperty('--text-transform', transform);
+            style.setProperty("--text-transform", transform);
         }
 
         // Decoration
-        const decoration = this.getAttribute('decoration');
+        const decoration = this.getAttribute("decoration");
         if (decoration) {
-            style.setProperty('--text-decoration', decoration);
+            style.setProperty("--text-decoration", decoration);
         }
 
         // Variant
-        const variant = this.getAttribute('variant');
+        const variant = this.getAttribute("variant");
         if (variant) {
-            style.setProperty('--font-variant', variant);
+            style.setProperty("--font-variant", variant);
         }
     }
 }
 
-customElements.define('rxv-text', RxvText);
+customElements.define("rxv-text", RxvText);

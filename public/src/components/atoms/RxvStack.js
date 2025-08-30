@@ -1,7 +1,7 @@
 class RxvStack extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
     }
 
     connectedCallback() {
@@ -10,7 +10,15 @@ class RxvStack extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['direction', 'gap', 'justify', 'align', 'wrap', 'divider', 'spacing'];
+        return [
+            "direction",
+            "gap",
+            "justify",
+            "align",
+            "wrap",
+            "divider",
+            "spacing",
+        ];
     }
 
     attributeChangedCallback() {
@@ -20,7 +28,7 @@ class RxvStack extends HTMLElement {
     }
 
     render() {
-        const template = document.createElement('template');
+        const template = document.createElement("template");
         template.innerHTML = `
             <style>
                 :host {
@@ -74,56 +82,63 @@ class RxvStack extends HTMLElement {
         const style = this.style;
 
         // Direction
-        const direction = this.getAttribute('direction') || 'column';
-        style.setProperty('--flex-direction', direction);
+        const direction = this.getAttribute("direction") || "column";
+        style.setProperty("--flex-direction", direction);
 
         // Gap
-        const gap = this.getAttribute('gap') || this.getAttribute('spacing') || '0';
+        const gap =
+            this.getAttribute("gap") || this.getAttribute("spacing") || "0";
         if (gap) {
-            style.setProperty('--gap', `var(--space-${gap}, ${gap})`);
+            style.setProperty("--gap", `var(--space-${gap}, ${gap})`);
         }
 
         // Justify content
-        const justify = this.getAttribute('justify');
+        const justify = this.getAttribute("justify");
         if (justify) {
             const justifyMap = {
-                'start': 'flex-start',
-                'center': 'center',
-                'end': 'flex-end',
-                'between': 'space-between',
-                'around': 'space-around',
-                'evenly': 'space-evenly'
+                start: "flex-start",
+                center: "center",
+                end: "flex-end",
+                between: "space-between",
+                around: "space-around",
+                evenly: "space-evenly",
             };
-            style.setProperty('--justify-content', justifyMap[justify] || justify);
+            style.setProperty(
+                "--justify-content",
+                justifyMap[justify] || justify
+            );
         }
 
         // Align items
-        const align = this.getAttribute('align');
+        const align = this.getAttribute("align");
         if (align) {
             const alignMap = {
-                'start': 'flex-start',
-                'center': 'center',
-                'end': 'flex-end',
-                'stretch': 'stretch',
-                'baseline': 'baseline'
+                start: "flex-start",
+                center: "center",
+                end: "flex-end",
+                stretch: "stretch",
+                baseline: "baseline",
             };
-            style.setProperty('--align-items', alignMap[align] || align);
+            style.setProperty("--align-items", alignMap[align] || align);
         }
 
         // Wrap
-        const wrap = this.getAttribute('wrap');
-        if (wrap === 'true' || wrap === 'wrap') {
-            style.setProperty('--flex-wrap', 'wrap');
-        } else if (wrap === 'reverse') {
-            style.setProperty('--flex-wrap', 'wrap-reverse');
+        const wrap = this.getAttribute("wrap");
+        if (wrap === "true" || wrap === "wrap") {
+            style.setProperty("--flex-wrap", "wrap");
+        } else if (wrap === "reverse") {
+            style.setProperty("--flex-wrap", "wrap-reverse");
         }
 
         // Divider color
-        const dividerColor = this.getAttribute('divider-color');
+        const dividerColor = this.getAttribute("divider-color");
         if (dividerColor) {
-            style.setProperty('--divider-color', `var(--color-${dividerColor}, ${dividerColor})`);
+            style.setProperty(
+                "--divider-color",
+                `var(--color-${dividerColor}, ${dividerColor})`
+            );
         }
     }
 }
 
-customElements.define('rxv-stack', RxvStack);
+customElements.define("rxv-stack", RxvStack);
