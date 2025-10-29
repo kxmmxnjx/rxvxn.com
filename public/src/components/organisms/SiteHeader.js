@@ -1,12 +1,12 @@
-import '/src/components/atoms/RxvBox.js';
-import '/src/components/atoms/RxvText.js';
-import '/src/components/atoms/RxvButton.js';
-import '/src/components/molecules/RxvCard.js';
+import "/src/components/atoms/RxvBox.js";
+import "/src/components/atoms/RxvText.js";
+import "/src/components/atoms/RxvButton.js";
+import "/src/components/molecules/RxvCard.js";
 
 class SiteHeader extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
     }
 
     connectedCallback() {
@@ -54,4 +54,4 @@ class SiteHeader extends HTMLElement {
     }
 }
 
-customElements.define('site-header', SiteHeader);
+customElements.define("site-header", SiteHeader);
