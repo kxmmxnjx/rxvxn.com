@@ -27,8 +27,16 @@ class SiteHeader extends HTMLElement {
                     text-decoration: none;
                     color: inherit;
                 }
+
+                /* 추가: 헤더 아래 검은 한 줄 */
+                .separator {
+                    height: 1px;
+                    background: #000;
+                    width: 100%;
+                    margin-top: 8px;
+                }
             </style>
-            <rxv-card>
+            <rxv-card >
                 <div class="header-content">
                     <rxv-text size="lg" weight="bold">
                         <a href="/" onclick="window.route('/'); event.preventDefault();">rxvxn.com</a>
@@ -41,6 +49,7 @@ class SiteHeader extends HTMLElement {
                     </nav>
                 </div>
             </rxv-card>
+            <div class="separator" aria-hidden="true"></div>
         `;
     }
 }
