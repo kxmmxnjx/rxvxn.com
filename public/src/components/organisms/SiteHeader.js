@@ -1,12 +1,12 @@
-import "/src/components/atoms/RxvBox.js";
-import "/src/components/atoms/RxvText.js";
-import "/src/components/atoms/RxvButton.js";
-import "/src/components/molecules/RxvCard.js";
+import '/src/components/atoms/RxvBox.js';
+import '/src/components/atoms/RxvText.js';
+import '/src/components/atoms/RxvButton.js';
+import '/src/components/molecules/RxvCard.js';
 
 class SiteHeader extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: "open" });
+        this.attachShadow({ mode: 'open' });
     }
 
     connectedCallback() {
@@ -27,16 +27,8 @@ class SiteHeader extends HTMLElement {
                     text-decoration: none;
                     color: inherit;
                 }
-
-                /* 추가: 헤더 아래 검은 한 줄 */
-                .separator {
-                    height: 1px;
-                    background: #000;
-                    width: 100%;
-                    margin-top: 8px;
-                }
             </style>
-            <rxv-card >
+            <rxv-card>
                 <div class="header-content">
                     <rxv-text size="lg" weight="bold">
                         <a href="/" onclick="window.route('/'); event.preventDefault();">rxvxn.com</a>
@@ -49,9 +41,8 @@ class SiteHeader extends HTMLElement {
                     </nav>
                 </div>
             </rxv-card>
-            <div class="separator" aria-hidden="true"></div>
         `;
     }
 }
 
-customElements.define("site-header", SiteHeader);
+customElements.define('site-header', SiteHeader);
