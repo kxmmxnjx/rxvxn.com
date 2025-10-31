@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raven's personal site - Technical demos and computer art">
+    <title>rxvxn.com</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+</head>
+
+<body>
+    <!-- Main Layout -->
+    <div class="layout has-nav has-aside">
+
+        <!-- Navigation (Left Column) -->
+        <nav class="layout-nav" id="main-nav">
+            <rx-navigation></rx-navigation>
+        </nav>
+
+        <!-- Main Content (Center Column) -->
+        <main class="layout-main" id="main-content">
+            <rx-header></rx-header>
+            <section id="content-area">
+                <!-- Dynamic content loaded here -->
+            </section>
+            <rx-footer></rx-footer>
+        </main>
+
+        <!-- Aside (Right Column) - Optional -->
+        <aside class="layout-aside" id="sidebar">
+            <rx-sidebar></rx-sidebar>
+        </aside>
+
+    </div>
+
+    <!-- Web Components -->
+    <script type="module" src="/assets/js/components/atoms/Button.js"></script>
+    <script type="module" src="/assets/js/components/atoms/Card.js"></script>
+    <script type="module" src="/assets/js/components/molecules/ProjectCard.js"></script>
+    <script type="module" src="/assets/js/components/organisms/Navigation.js"></script>
+    <script type="module" src="/assets/js/components/organisms/Header.js"></script>
+    <script type="module" src="/assets/js/components/organisms/Sidebar.js"></script>
+    <script type="module" src="/assets/js/components/organisms/Footer.js"></script>
+    <script type="module" src="/assets/js/components/features/ProjectGrid.js"></script>
+
+    <!-- Main App -->
+    <script type="module" src="/assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical demos - rxvxn.com">
+    <title>Demos - rxvxn.com</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+</head>
+
+<body>
+    <div class="layout has-nav">
+        <nav class="layout-nav">
+            <rx-navigation></rx-navigation>
+        </nav>
+
+        <main class="layout-main">
+            <rx-header title="Technical Demos" subtitle="Interactive demonstrations and experiments"></rx-header>
+
+            <section id="demo-grid">
+                <rx-project-grid filter="demo"></rx-project-grid>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="/assets/js/components/atoms/Button.js"></script>
+    <script type="module" src="/assets/js/components/atoms/Card.js"></script>
+    <script type="module" src="/assets/js/components/molecules/ProjectCard.js"></script>
+    <script type="module" src="/assets/js/components/organisms/Navigation.js"></script>
+    <script type="module" src="/assets/js/components/organisms/Header.js"></script>
+    <script type="module" src="/assets/js/components/features/ProjectGrid.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
+</body>
+
+</html>

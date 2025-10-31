@@ -1,0 +1,55 @@
+[
+    {
+        "id": "websocket-chat",
+        "title": "WebSocket Chat",
+        "description": "Real-time chat application using WebSocket protocol with room support and message history.",
+        "image": "/assets/images/projects/websocket-chat.png",
+        "tags": ["WebSocket", "Real-time", "JavaScript"],
+        "url": "/demos/websocket-chat",
+        "category": "demo",
+        "featured": true,
+        "github": "https://github.com/kxmmxnjx/websocket-chat"
+    },
+    {
+        "id": "wasm-image-filter",
+        "title": "WebAssembly Image Filter",
+        "description": "High-performance image processing using WebAssembly. Apply filters in real-time with C++ compiled to WASM.",
+        "image": "/assets/images/projects/wasm-filter.png",
+        "tags": ["WebAssembly", "C++", "Image Processing"],
+        "url": "/demos/wasm-filter",
+        "category": "demo",
+        "featured": true,
+        "github": "https://github.com/kxmmxnjx/wasm-filter"
+    },
+    {
+        "id": "generative-art-1",
+        "title": "Flow Field Particles",
+        "description": "Generative art piece using flow fields and particle systems. Created with Canvas API.",
+        "image": "/assets/images/art/flow-field.png",
+        "tags": ["Generative Art", "Canvas", "Animation"],
+        "url": "/art/flow-field",
+        "category": "art",
+        "featured": false
+    },
+    {
+        "id": "retro-game",
+        "title": "Retro Space Shooter",
+        "description": "Classic space shooter game with pixel art graphics. Built with vanilla JavaScript and Canvas.",
+        "image": "/assets/images/projects/space-shooter.png",
+        "tags": ["Game", "Canvas", "Pixel Art"],
+        "url": "/demos/space-shooter",
+        "category": "demo",
+        "featured": true,
+        "github": "https://github.com/kxmmxnjx/space-shooter"
+    },
+    {
+        "id": "neural-network-viz",
+        "title": "Neural Network Visualizer",
+        "description": "Interactive visualization of a simple neural network learning XOR function.",
+        "image": "/assets/images/projects/neural-viz.png",
+        "tags": ["Machine Learning", "Visualization", "Canvas"],
+        "url": "/demos/neural-viz",
+        "category": "demo",
+        "featured": false
+    }
+]
