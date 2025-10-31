@@ -1,0 +1,55 @@
+# Systemd service for rxvxn.com Node.js API server
+# Location: /etc/systemd/system/rxvxn.service
+#
+# Installation:
+#   1. Copy this file to /etc/systemd/system/rxvxn.service
+#   2. sudo systemctl daemon-reload
+#   3. sudo systemctl enable rxvxn
+#   4. sudo systemctl start rxvxn
+#
+# Commands:
+#   Start:   sudo systemctl start rxvxn
+#   Stop:    sudo systemctl stop rxvxn
+#   Restart: sudo systemctl restart rxvxn
+#   Status:  sudo systemctl status rxvxn
+#   Logs:    sudo journalctl -u rxvxn -f
+
+[Unit]
+Description=rxvxn.com API Server
+After=network.target
+Documentation=https://rxvxn.com
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/rxvxn.com/server
+ExecStart=/usr/bin/node /var/www/rxvxn.com/server/index.js
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOST=localhost
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+# Resource limits
+LimitNOFILE=65536
+MemoryLimit=512M
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=rxvxn
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/rxvxn.com/server/data
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,74 @@
+/* ============================================
+   theme.css - Design Tokens & Variables
+   ============================================ */
+
+:root {
+    /* Colors */
+    --color-bg: #FFFFFF;
+    --color-text: #000000;
+    --color-border: #000000;
+
+    /* Border */
+    --border-width: 1px;
+    --border-style: solid;
+    --border-radius: 0;
+    /* Right angles only */
+    --border: var(--border-width) var(--border-style) var(--color-border);
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    /* 4px */
+    --space-sm: 0.5rem;
+    /* 8px */
+    --space-md: 1rem;
+    /* 16px */
+    --space-lg: 1.5rem;
+    /* 24px */
+    --space-xl: 2rem;
+    /* 32px */
+    --space-2xl: 3rem;
+    /* 48px */
+
+    /* Layout */
+    --max-width: 1400px;
+    --nav-width: 240px;
+    --aside-width: 280px;
+    --content-padding: var(--space-lg);
+
+    /* Breakpoints (for JavaScript) */
+    --bp-desktop: 1120px;
+    --bp-tablet: 768px;
+    --bp-mobile: 480px;
+
+    /* Z-index layers */
+    --z-base: 1;
+    --z-nav: 10;
+    --z-modal: 100;
+    --z-overlay: 1000;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+}
+
+/* Utility classes for borders */
+.border {
+    border: var(--border);
+}
+
+.border-top {
+    border-top: var(--border);
+}
+
+.border-right {
+    border-right: var(--border);
+}
+
+.border-bottom {
+    border-bottom: var(--border);
+}
+
+.border-left {
+    border-left: var(--border);
+}
